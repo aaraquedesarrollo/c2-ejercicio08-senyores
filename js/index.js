@@ -21,16 +21,14 @@ for (const { nombre, foto, profesion, estado, twitter, marcado } of senyores) {
   const senyorTwitter = senyorElemento.querySelector(".senyor-twitter");
   senyorTwitter.textContent = twitter;
 
-  const iniciales = senyorElemento.querySelectorAll(".inicial");
+  const inicial = senyorElemento.querySelector(".inicial");
 
-  iniciales.forEach((inicial) => {
-    const nombreArray = nombre.split(" ");
-    if (nombreArray[0].length > 3) {
-      inicial.textContent = nombreArray[0].charAt(0);
-    } else {
-      inicial.textContent = nombreArray[1].charAt(0);
-    }
-  });
+  const nombreArray = nombre.split(" ");
+  if (nombreArray[0].length > 3) {
+    inicial.textContent = nombreArray[0].charAt(0);
+  } else {
+    inicial.textContent = nombreArray[1].charAt(0);
+  }
 
   if (marcado) {
     const icono = senyorElemento.querySelector(".icono");
